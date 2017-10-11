@@ -1,4 +1,4 @@
-wget https://motchallenge.net/movies/ETH-Bahnhof-gt.mp4 > objtracker/sources/
-wget https://motchallenge.net/movies/ETH-Bahnhof.mp4 > objtracker/sources/
-wget https://motchallenge.net/movies/ETH-Bahnhof-det.mp4 > objtracker/sources/
+wget https://motchallenge.net/movies/ETH-Bahnhof-gt.mp4 -P objtracker/sources/
+wget https://motchallenge.net/movies/ETH-Bahnhof.mp4 -P objtracker/sources/
+wget https://motchallenge.net/movies/ETH-Bahnhof-det.mp4 -P objtracker/sources/
 
