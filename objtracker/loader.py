@@ -7,40 +7,39 @@ import numpy as np
 import cv2
 
 
-
-
 xpixels = 480
 ypixels = 640
 rgb = 3
-
-
 
 
 class Loader(object):
 
     """ Load data """
 
-    def __init__(self):
-        pass
+    def __init__(self, name):
+        self.name = name
+        self.source_path = "sources/" + self.name + ".mp4"
 
-    def load(self, source_path):
+    def load(self):
         """ Load source mp4 into cache if it does not yet exist """
 
-        name = source_path.split("/")[-1].split(".")[0]
+        print("Caching from {}".format(self.source_path))
+        name = self.source_path.split("/")[-1].split(".")[0]
         cache_path = "cache/" + name
 
-        if os.path.isfile(cache_path):
+        if os.path.isfile(cache_path + ".npz"):
             # already in cache
+            print("{} already cached".format(name))
             pass
         else:
-            arr = Loader.make_frames(source_path)
+            arr = self.make_frames()
             print("Finished frame extraction for {}".format(name))
             np.savez_compressed("cache/" + name, arr=arr)
             print("Finished caching for {}".format(name))
 
-    @staticmethod
-    def make_frames(source_path):
-        cap = cv2.VideoCapture(source_path)
+
+    def make_frames(self):
+        cap = cv2.VideoCapture(self.source_path)
         success = True
         i = 0
         images = []
