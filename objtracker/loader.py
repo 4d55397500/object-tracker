@@ -16,9 +16,11 @@ class Loader(object):
 
     """ Load data """
 
+
     def __init__(self, name):
         self.name = name
         self.source_path = "sources/" + self.name + ".mp4"
+
 
     def load(self):
         """ Load source mp4 into cache if it does not yet exist """
@@ -39,6 +41,7 @@ class Loader(object):
 
 
     def make_frames(self):
+        """ Return numpy array of frames """
         cap = cv2.VideoCapture(self.source_path)
         success = True
         i = 0
