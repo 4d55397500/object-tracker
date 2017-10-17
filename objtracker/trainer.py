@@ -49,7 +49,6 @@ class Trainer(object):
         model.fit(x, y)
 
 
-
     def get_model1(self):
         """ Per-frame feed-forward network mapping flattened pixels
         to the bounding boxes. """
