@@ -9,10 +9,19 @@
            motion of a given individual over frames
 
 """
+from trainer import Trainer
+
 
 
 class Indexer(object):
-    pass
+
+    def __init__(self, name):
+        self.name = name
+        self.trainer = Trainer(name)
+
+
+
+
 
 
 if __name__ == "__main__":

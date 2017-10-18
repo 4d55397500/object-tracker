@@ -14,6 +14,7 @@ rgb = 3
 
 class Loader(object):
 
+
     """ Load data """
 
 

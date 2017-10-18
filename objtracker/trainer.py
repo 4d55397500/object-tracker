@@ -5,9 +5,7 @@
 
 """
 from keras.models import Sequential
-from keras import layers, models, applications
-from keras.layers import Conv2D, MaxPooling2D, Flatten, BatchNormalization, Lambda, Dense
-from keras import backend as K
+from keras.layers import Dense
 import numpy as np
 
 from loader import Loader
@@ -21,11 +19,12 @@ rgb = 3
 class Trainer(object):
 
 
-    def __init__(self):
-        pass
+    def __init__(self, name):
+        self.name = name
+        self.is_trained = False
 
 
-    def train(self, name):
+    def train(self, name, batch_size=100, num_epochs=10):
         """ Train on a model """
         ldr = Loader(name)
         ldr.load()
@@ -46,7 +45,8 @@ class Trainer(object):
 
         # train regression model image -> bounding box
         model = self.get_model1()
-        model.fit(x, y)
+        model.fit(x, y, batch_size=batch_size, epochs=num_epochs)
+        self.is_trained = True
 
 
     def get_model1(self):
@@ -84,6 +84,7 @@ class Trainer(object):
         rows = np.array(rows)
         return rows
 
+
     def first_bounding_boxes(self, name):
         """ Returns only the first bounding box in each frame. For easy training. """
         flname = "labels/" + name + ".txt"
@@ -98,6 +99,7 @@ class Trainer(object):
                 last_frame = frame
         rows = np.array(rows)
         return rows
+
 
 
 if __name__ == "__main__":
