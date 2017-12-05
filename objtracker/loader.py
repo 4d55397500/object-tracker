@@ -20,6 +20,7 @@ class Loader(object):
 
     def __init__(self, name):
         self.name = name
+        self.suffixes = ['', '-det', '-gt']
         self.source_path = "sources/" + self.name + ".mp4"
 
 
@@ -33,7 +34,6 @@ class Loader(object):
         if os.path.isfile(cache_path + ".npz"):
             # already in cache
             print("{} already cached".format(name))
-            pass
         else:
             arr = self.make_frames()
             print("Finished frame extraction for {}".format(name))

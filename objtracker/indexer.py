@@ -19,6 +19,15 @@ class Indexer(object):
         self.name = name
         self.trainer = Trainer(name)
 
+    def persist(self):
+        if not self.trainer.is_trained:
+            print("Trainer has not yet been executed. Cannot persist")
+        else:
+            # persist trained information in appropriate database
+            model = self.trainer.load_model()
+            # ...
+
+
 
 
 

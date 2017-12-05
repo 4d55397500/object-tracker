@@ -22,11 +22,12 @@ class Trainer(object):
     def __init__(self, name):
         self.name = name
         self.is_trained = False
+        self.model = None
 
 
-    def train(self, name, batch_size=100, num_epochs=10):
+    def train(self, batch_size=100, num_epochs=10):
         """ Train on a model """
-        ldr = Loader(name)
+        ldr = Loader(self.name)
         ldr.load()
         arr = np.load("cache/" + name + ".npz")["arr"]
         print("Loaded cached array of shape {}".format(arr.shape))
@@ -47,7 +48,13 @@ class Trainer(object):
         model = self.get_model1()
         model.fit(x, y, batch_size=batch_size, epochs=num_epochs)
         self.is_trained = True
+        self.model = model
 
+
+    def predict(self):
+        """ Run prediction """
+        if self.is_trained:
+            pass
 
     def get_model1(self):
         """ Per-frame feed-forward network mapping flattened pixels
@@ -58,6 +65,15 @@ class Trainer(object):
         model.compile('adadelta', 'mse')
         return model
 
+    def load_model(self):
+        raise NotImplementedError
+
+    def save_model(self):
+        if not self.is_trained:
+            print("Cannot save model. Model has not been trained")
+        else:
+            raise NotImplementedError
+            # save model
 
     def get_bounding_boxes(self, name):
         """
@@ -103,6 +119,6 @@ class Trainer(object):
 
 
 if __name__ == "__main__":
-    trainer = Trainer()
     name = "ETH-Bahnhof-det"
-    trainer.train(name)
+    trainer = Trainer(name)
+    trainer.train()
