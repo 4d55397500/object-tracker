@@ -1,5 +1,8 @@
 object-tracker
 ---
+
+![Alt Text](./sample.gif)
+
 Object tracking and persistence for learned information in Tensorflow.
 
 System consists of a `loader`, `trainer`, and `indexer`.
@@ -23,3 +26,5 @@ $ ./download_sources
 ```
 $ python objtracker/trainer.py
 ```
+
+Training data is taken from the [Muliple Object Tracking Benchmark](https://motchallenge.net/)
