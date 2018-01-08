@@ -3,7 +3,7 @@ object-tracker
 
 ![Alt Text](./sample.gif)
 
-Object tracking and persistence for learned information in Tensorflow.
+An intelligence system for tracking based on data from the [Muliple Object Tracking Benchmark](https://motchallenge.net/).
 
 System consists of a `loader`, `trainer`, and `indexer`.
 
@@ -21,14 +21,41 @@ System consists of a `loader`, `trainer`, and `indexer`.
 **labels** holds frame sequence labels, including bounding boxes
 
 
-#### Download mp4 sources
+### Download sources
+
+Download mp4 video files from the [Muliple Object Tracking Benchmark](https://motchallenge.net/).
+
 ```
 $ ./download_sources
 ```
-#### Train
+### Train
 
 ```
 $ python objtracker/trainer.py
 ```
 
-Training data is taken from the [Muliple Object Tracking Benchmark](https://motchallenge.net/)
+### Describe
+
+A script is provided to give a text description of the sequence of tracked objects or people coming in or out of the scene.
+
+```
+$ python objtracker/describe.py objtracker/labels/*-gt.txt
+
+----- Frame 1 -----
+Number of objects: 6
+New object 1 appeared in this frame
+New object 3 appeared in this frame
+New object 2 appeared in this frame
+New object 5 appeared in this frame
+New object 4 appeared in this frame
+New object 6 appeared in this frame
+----- Frame 2 -----
+Number of objects: 6
+----- Frame 3 -----
+Number of objects: 6
+----- Frame 4 -----
+Number of objects: 6
+New object 7 appeared in this frame
+Object 1 disappeared from this frame
+....
+```
