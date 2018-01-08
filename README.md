@@ -59,3 +59,19 @@ New object 7 appeared in this frame
 Object 1 disappeared from this frame
 ....
 ```
+
+### Use with pretrained models
+
+Pretrained detection of objects, with scores, category identification, and bounding boxes is implemented for single images [here](objtracker/pretrained.py), using a pretrained model in the [Tensorflow object detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md).
+
+```
+Running detection ...
+300 objects detected
+Detected bus at [ 0.38834649  0.46355954  0.61770302  0.54470783] with confidence 0.998029649258
+Detected car at [ 0.55729872  0.58232194  0.65886098  0.64446479] with confidence 0.986325442791
+Detected car at [ 0.74271494  0.          1.          0.20151579] with confidence 0.976649999619
+Detected car at [ 0.49773172  0.55526364  0.56158018  0.59371865] with confidence 0.950774371624
+Detected person at [ 0.53090078  0.69723791  0.67113394  0.73002726] with confidence 0.929940283298
+Detected traffic light at [ 0.39916718  0.75449526  0.4722515   0.7770741 ] with confidence 0.915378570557
+
+```

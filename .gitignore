@@ -2,5 +2,7 @@ objtracker/sources
 objtracker/cache
 objtracker/data
 .idea/
+faster_rcnn_resnet50_coco_2017_11_08/
+sample_image.jpg
 
 
