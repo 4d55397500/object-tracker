@@ -8,7 +8,11 @@ Object tracking and persistence for learned information in Tensorflow.
 System consists of a `loader`, `trainer`, and `indexer`.
 
 
-**sources** holds mp4 files
+**sources** holds mp4 files. There are 3 sorts of sources:
+
+ * *.mp4: *raw video*
+ * *-det.mp4: *identified but not classified objects/people*
+ * *-gt.mp4: *identified and classified objects/people*
 
 
 **cache** holds compressed numpy array representations of frame sequences
