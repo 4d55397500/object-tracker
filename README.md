@@ -62,7 +62,7 @@ Object 1 disappeared from this frame
 
 ### Use with pretrained models
 
-Pretrained detection of objects, with scores, category identification, and bounding boxes is implemented for single images [here](objtracker/pretrained.py), using a pretrained model in the [Tensorflow object detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md).
+Pretrained detection of objects, with scores, category identification, and bounding boxes is implemented for cached numpy arrays of frames [here](objtracker/pretrained.py), using a pretrained model in the [Tensorflow object detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md).
 
 ```
 Running detection ...
