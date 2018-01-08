@@ -5,6 +5,11 @@
   disappearance of tracked objects/people
   across frames from a label file ("*-gt.txt")
 
+ Potential questions to be answered:
+   What happened to object A?
+   Which objects know one another?
+
+
 
 """
 import sys
@@ -37,13 +42,8 @@ def describe(gt_label_filename):
                     previous_objects = current_objects.copy()
                     current_objects = set()
 
-
                 current_objects.add(id)
                 current_frame = frame
-
-
-
-
 
 
 
