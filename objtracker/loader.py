@@ -62,4 +62,5 @@ class Loader(object):
 
 
 if __name__ == "__main__":
-    pass
+    ldr = Loader("ETH-Bahnhof")
+    ldr.load()
