@@ -10,7 +10,6 @@ from PIL import Image
 
 # these files may not be in repository (check .gitignore)
 PRETRAINED_MODEL = "../faster_rcnn_resnet50_coco_2017_11_08/frozen_inference_graph.pb"
-SAMPLE_IMAGE = "../sample_image.jpg"
 LABELS_INDEX = "../mscoco_label_map.pbtxt"
 
 
