@@ -1,5 +1,6 @@
 object-tracker
 ---
+[![Build Status](https://travis-ci.org/4d55397500/object-tracker.svg?branch=master)](https://travis-ci.org/4d55397500/object-tracker)
 
 ![Alt Text](./sample.gif)
 
