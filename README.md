@@ -29,6 +29,15 @@ Download mp4 video files from the [Muliple Object Tracking Benchmark](https://mo
 ```
 $ ./download_sources
 ```
+
+### Download pretrained model
+
+Download pretrained model for object detection
+
+```
+$ ./download_pretrained
+```
+
 ### Train
 
 ```
