@@ -7,10 +7,11 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image
 import json
+import os
 
 # these files may not be in repository (check .gitignore)
-PRETRAINED_MODEL = "../faster_rcnn_resnet50_coco_2017_11_08/frozen_inference_graph.pb"
-LABELS_INDEX = "../mscoco_label_map.pbtxt"
+PRETRAINED_MODEL = os.environ["PRETRAINED_MODEL"]#"../faster_rcnn_resnet50_coco_2017_11_08/frozen_inference_graph.pb"
+LABELS_INDEX = "./mscoco_label_map.pbtxt"
 PREDICTION_OUTPUT = "./prediction_output"
 
 def load_graph():
